@@ -1,35 +1,59 @@
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
-print"Heyllo"
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/teppyboy/RbxScripts/master/Misc/UI_Libraries/Zypher/Library.lua"))()
+local main = library:CreateMain({
+    projName = "UILib",
+    Resizable = true,
+    MinSize = UDim2.new(0,400,0,400),
+    MaxSize = UDim2.new(0,750,0,500),
+})
+
+local category = main:CreateCategory("Nightmare v1.0")
+local section = category:CreateSection("Nightmare v1.0")
+
+section:Create(
+    "Textlabel",
+    "Made by @GIowingMoney!"
+)
+
+local category = main:CreateCategory("Player")
+local section = category:CreateSection("Normal Options")
+
+local category = main:CreateCategory("Items")
+local section = category:CreateSection("Giver")
+
+local category = main:CreateCategory("Knight")
+local section = category:CreateSection("Normal Options")
+
+local category = main:CreateCategory("Rate")
+local section = category:CreateSection("Normal Options")
+
+local category = main:CreateCategory("Blacklist")
+local section = category:CreateSection("Normal Options")
+
+local category = main:CreateCategory("Notifications")
+local section = category:CreateSection("Normal Options")
+
+local category = main:CreateCategory("Themes")
+local section = category:CreateSection("Themes")
+
+local Themes = {
+	Background = Color3.fromRGB(46, 46, 54),
+	GrayContrast = Color3.fromRGB(39, 38, 46),
+	DarkContrast = Color3.fromRGB(29, 29, 35),
+	TextColor = Color3.fromRGB(255,255,255),
+	SectionContrast = Color3.fromRGB(39,38,46),
+	DropDownListContrast = Color3.fromRGB(34, 34, 41),
+	CharcoalContrast = Color3.fromRGB(21,21,26),
+}
+for ColorsName, Value in next, Themes do
+    section:Create(
+        "ColorPicker",
+        ColorsName,
+        function(colors)
+            Value = colors
+            library:SetThemeColor(ColorsName, colors)
+        end,
+        {
+            default = Value
+        }
+    )
+end
