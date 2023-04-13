@@ -5,9 +5,9 @@ local main = library:CreateMain({
     MinSize = UDim2.new(0,400,0,400),
     MaxSize = UDim2.new(0,750,0,500),
 })
-local plr = game.Players.LocalPlayer
 local category = main:CreateCategory("Nightmare v1.0")
 local section = category:CreateSection("Nightmare v1.0")
+local plr = game.Players.LocalPlayer
 
 section:Create(
     "Textlabel",
