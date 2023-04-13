@@ -13,6 +13,11 @@ section:Create(
     "Textlabel",
     "Made by @GIowingMoney!"
 )
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Nightmare",
+	Text = "",
+	Icon = "rbxassetid://13086440301"
+})
 
 local category = main:CreateCategory("Player")
 local section = category:CreateSection("Normal Options")
